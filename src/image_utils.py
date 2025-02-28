@@ -1,8 +1,10 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5.QtCore import pyqtSignal
 from PIL import Image
 import numpy as np
 
 class RegionSelector(QtWidgets.QDialog):
+    region_selected = pyqtSignal(tuple)
     def __init__(self):
         super().__init__()
         self.setWindowTitle('Выбор области')
@@ -36,6 +38,7 @@ class RegionSelector(QtWidgets.QDialog):
         self.is_selecting = False
         self.rect = QtCore.QRect(self.begin, self.end).normalized()
         self.region = (self.rect.left(), self.rect.top(), self.rect.width(), self.rect.height())
+        self.region_selected.emit(self.region)
         self.accept()  # Close the dialog
         self.update()
 
