@@ -18,8 +18,8 @@ This project is designed to compare numbers extracted from specific regions of g
 
 1. **Clone the repository**:
     ```sh
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/leekery/deadlock_tracker.git
+    cd deadlock_tracker
     ```
 
 2. **Install the required Python packages**:
